@@ -246,7 +246,7 @@ nav.scrolled {
 .resume-btn {
   display: inline-block;
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
   padding: 1.1rem 2.8rem;
   background: var(--accent);
   color: var(--bg-primary);
@@ -271,7 +271,7 @@ nav.scrolled {
 }
 
 .scroll-indicator {
-  position: absolute;
+  position: fixed;
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
@@ -808,7 +808,7 @@ footer {
   }
 
   .resume-btn {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 
   .section {
@@ -883,4 +883,9 @@ footer {
     padding: 0.9rem 2rem;
     font-size: 0.8rem;
   }
+}
+/* Remove outline from nav links - they use underline instead */
+.nav-links a:focus,
+.mobile-link:focus {
+  outline: none;
 }

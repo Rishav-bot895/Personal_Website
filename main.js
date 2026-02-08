@@ -216,8 +216,13 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Add focus styles for accessibility
+// Add focus styles for accessibility (except nav links which have underline)
 document.querySelectorAll('a, button').forEach(el => {
+    // Skip nav links - they have their own underline styling
+    if (el.closest('.nav-links') || el.closest('.mobile-menu')) {
+        return;
+    }
+    
     el.addEventListener('focus', function() {
         this.style.outline = '2px solid var(--accent)';
         this.style.outlineOffset = '4px';
