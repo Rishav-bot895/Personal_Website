@@ -58,7 +58,7 @@
 
             
 
-            <a href="assets/Rishav's Resume.pdf" class="resume-btn" download>Download Resume</a>
+            <button class="resume-btn" id="resumeBtn">Resume</button>
             <div class="scroll-indicator">
                 <span>Scroll to explore</span>
                 <div class="scroll-arrow">↓</div>
@@ -109,21 +109,29 @@
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
+                    <div class="timeline-year">April 2026 – Present</div>
+                    <h3 class="timeline-title">SWE(AI/ML) Intern</h3>
+                    <p class="timeline-subtitle">Starvox Labs Private Ltd.</p>
+                    <div class="experience-points">
+                        <div class="experience-point">
+                            <span class="bullet">•</span>
+                            <p>Contributed to the development and scaling of an AI voice agent enabling autonomous call handling and interactive video meetings (screen sharing, presentations, web navigation), supporting 15,000+ calls/month.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
                     <div class="timeline-year">May 2025 – June 2025</div>
                     <h3 class="timeline-title">Web Developer Intern</h3>
                     <p class="timeline-subtitle">Secuodsoft Technologies Private Ltd.</p>
                     <div class="experience-points">
                         <div class="experience-point">
                             <span class="bullet">•</span>
-                            <p>Developed a Django-based web application integrating Tesseract OCR and Pillow for image preprocessing.</p>
+                            <p>Developed a Django-based web application that extracts text from uploaded images by integrating Tesseract for OCR and Pillow for preprocessing.</p>
                         </div>
                         <div class="experience-point">
                             <span class="bullet">•</span>
-                            <p>Implemented AJAX-powered asynchronous uploads to improve user experience and responsiveness.</p>
-                        </div>
-                        <div class="experience-point">
-                            <span class="bullet">•</span>
-                            <p>Worked with Flask, Django, and REST APIs to contribute to scalable web application development.</p>
+                            <p>Gained experience with Flask, Django, and RESTful APIs while contributing to scalable web application development.</p>
                         </div>
                     </div>
                 </div>
@@ -325,6 +333,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Resume</h2>
+                <button class="modal-close" id="closeResumeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="resumeIframe" src="assets/Rishav's Resume.pdf" type="application/pdf"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="assets/Rishav's Resume.pdf" download class="modal-download-btn">Download Resume</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>

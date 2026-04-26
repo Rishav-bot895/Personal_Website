@@ -243,4 +243,39 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
+// Resume Modal Functionality
+const resumeBtn = document.getElementById('resumeBtn');
+const resumeModal = document.getElementById('resumeModal');
+const closeResumeModal = document.getElementById('closeResumeModal');
+
+if (resumeBtn && resumeModal) {
+    // Open modal when button is clicked
+    resumeBtn.addEventListener('click', () => {
+        resumeModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal when close button is clicked
+    closeResumeModal.addEventListener('click', () => {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close modal when clicking outside the modal content
+    resumeModal.addEventListener('click', (e) => {
+        if (e.target === resumeModal) {
+            resumeModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+            resumeModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
 console.log('Portfolio initialized successfully! 🚀');
