@@ -3,398 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rishav Raj - Software developer focused on AI, backend systems, and full-stack applications.">
+    <meta property="og:title" content="Rishav Raj | Software Developer">
+    <meta property="og:description" content="Retro arcade-inspired portfolio for Rishav Raj, showcasing AI, backend, full-stack projects, education, and experience.">
+    <meta property="og:type" content="website">
     <title>Rishav Raj | Software Developer</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon-bw.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
+    <canvas id="gridCanvas" aria-hidden="true"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="start-overlay" id="startOverlay" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+        <div class="coin-burst" id="coinBurst" aria-hidden="true">O</div>
+        <div class="start-panel">
+            <p class="boot-kicker">Rishav Raj OS</p>
+            <h1 id="startTitle">&gt; INSERT COIN TO START</h1>
+            <button class="coin-button" id="coinButton" type="button">INSERT COIN</button>
+            <p class="enter-hint">[ PRESS ENTER ]</p>
         </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    </div>
+    <a class="skip-link" href="#hero">Skip to content</a>
+
+    <nav id="navbar" aria-label="Primary navigation">
+        <a class="brand" href="#hero" aria-label="Rishav Raj home">
+            <img src="assets/favicon-bw.png" alt="Rishav Raj logo" width="40" height="40">
+            <span>Rishav's Arcade</span>
+        </a>
+
+        <div class="nav-links" aria-label="Portfolio sections">
+            <a href="#hero">START</a>
+            <a href="#about">BIO</a>
+            <a href="#education">STAGES</a>
+            <a href="#skills">INVENTORY</a>
         </div>
+
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#education" class="mobile-link">Education</a>
-        <a href="#experience" class="mobile-link">Experience</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#skills" class="mobile-link">Skills</a>
-        <a href="#certifications" class="mobile-link">Certifications</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#hero" class="mobile-link">START</a>
+        <a href="#about" class="mobile-link">BIO</a>
+        <a href="#education" class="mobile-link">STAGES</a>
+        <a href="#skills" class="mobile-link">INVENTORY</a>
     </div>
 
-    <!-- Hero Section - About Me -->
-    <section id="about" class="hero">
-        <div class="hero-content">
-            <div class="greeting">Hi I am</div>
-            <h1 class="name">Rishav Raj</h1>
-
-            <div class="title-wrapper">
-                <span class="arrow">↘</span>
-                <div class="title">
-                    Software Developer<br>
-                    AI & Full-Stack Enthusiast
+    <main id="main">
+        <section id="hero" class="hero">
+            <div class="hero-card animate-on-scroll">
+                <p class="status-line">&gt; PLAYER 1: READY</p>
+                <h1>RISHAV RAJ</h1>
+                <h2>SOFTWARE DEVELOPER</h2>
+                <p class="hero-description">
+                    Computer Science undergraduate at KIIT building AI-driven applications,
+                    backend systems, and scalable full-stack products with Django, React,
+                    FastAPI, TensorFlow, and cloud-native tooling.
+                </p>
+                <div class="hero-actions">
+                    <a class="arcade-btn" href="#projects">VIEW PROJECTS</a>
+                    <a class="arcade-btn" href="#contact">HIRE ME</a>
+                    <button class="arcade-btn" id="resumeBtn" type="button">RESUME</button>
                 </div>
             </div>
+            <a class="scroll-indicator" href="#about" aria-label="Scroll to biography">
+                <span>SCROLL DOWN</span>
+                <span class="scroll-arrow">v</span>
+            </a>
+        </section>
 
-            <p class="description">
-                I am a Computer Science undergraduate at KIIT with a CGPA of 9.30/10.
-                I specialize in backend systems, AI-driven applications, and scalable
-                full-stack development using Django, React, and TensorFlow.
-            </p>
-
-            
-
-            <button class="resume-btn" id="resumeBtn">Resume</button>
-            <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <div class="scroll-arrow">↓</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="section-container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2023 - 2027</div>
-                    <h3 class="timeline-title">Bachelor of Technology in Computer Science & Communication Engineering</h3>
-                    <p class="timeline-subtitle">Kalinga Institute of Industrial Technology</p>
-                    <p class="content-text">
-                        SGPA (Sem VI): 9.96/10.00 | CGPA (Sem I-VI): 9.30/10.00<br>
-                        Relevant Coursework: Data Structure and Algorithms, Operating Systems, Database Management Systems, Object Oriented Programming, Computer Networks
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2021 - 2023</div>
-                    <h3 class="timeline-title">Higher Secondary Education</h3>
-                    <p class="timeline-subtitle">KV IIT Powai Mumbai</p>
-                    <p class="content-text">
-                        Stream: PCM + Computer Science<br>
-                        Percentage: 86.8%
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
-                    <h3 class="timeline-title">Secondary Education</h3>
-                    <p class="timeline-subtitle">KV IIT Powai Mumbai</p>
-                    <p class="content-text">
-                        Percentage: 92.8%
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-<section id="experience" class="section section-alt">
-  <div class="section-container">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-year">April 2026 – June 2026</div>
-        <h3 class="timeline-title">SWE (AI/ML) Intern</h3>
-        <p class="timeline-subtitle">Starvox Labs Private Ltd.</p>
-
-        <div class="experience-points">
-          <div class="experience-point">
-            <span class="bullet">•</span>
-            <p>Enabled autonomous AI voice agents to handle 15,000+ calls/month and interactive video meetings by contributing to scaling, screen sharing, presentations, and web navigation capabilities.</p>
-          </div>
-
-          <div class="experience-point">
-            <span class="bullet">•</span>
-            <p>Designed and developed a node-based workflow automation builder supporting 25+ configurable nodes for an AI-powered content generation and ad campaign orchestration platform.</p>
-          </div>
-
-          <div class="experience-point">
-            <span class="bullet">•</span>
-            <p>Implemented seamless integration of AI agents with third-party tools for content generation and ad campaign execution through Model Context Protocol (MCP) infrastructure.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-year">May 2025 – June 2025</div>
-        <h3 class="timeline-title">Web Developer Intern</h3>
-        <p class="timeline-subtitle">Secuodsoft Technologies Private Ltd.</p>
-
-        <div class="experience-points">
-          <div class="experience-point">
-            <span class="bullet">•</span>
-            <p>Developed a Django-based web application that extracts text from uploaded images by integrating Tesseract for OCR and Pillow for preprocessing.</p>
-          </div>
-
-          <div class="experience-point">
-            <span class="bullet">•</span>
-            <p>Gained experience with Flask, Django, and RESTful APIs while contributing to scalable web application development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="section-container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-
-                <!-- NEW: AI Trust Analyzer -->
-                <a href="https://aitrustanalyszer.vercel.app" class="project-card">
-                    <div class="project-number">01</div>
-                    <h3 class="project-title">AI Trust Analyzer</h3>
-                    <p class="project-description">
-                        Engineered a multi-agent AI evaluation platform using Gemini and LangGraph,
-                        orchestrating 5 specialized agents to analyze 50+ claims per response and generate
-                        explainable trust scores. Built a hybrid RAG pipeline combining web search, semantic
-                        vector retrieval, deduplication, and contradiction detection, processing 300+ evidence
-                        snippets per analysis.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">Docker</span>
+        <section id="about" class="section terminal-section">
+            <div class="section-container animate-on-scroll">
+                <div class="terminal-card">
+                    <div class="terminal-header">
+                        <div class="window-controls" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>player_bio.exe</span>
                     </div>
-                </a>
-                
-                <a href="https://github.com/Rishav-bot895/Attendance_App_Frontend" target="_blank" class="project-card">
-                    <div class="project-number">02</div>
-                    <h3 class="project-title">BLE Attendance App</h3>
-                    <p class="project-description">
-                        Engineered a Bluetooth Low Energy based attendance application using RSSI enabling
-                        automated and contactless attendance marking. Architected a system with role-based access (Admin, Teacher, Student)
-                        supporting real-time attendance processing.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">BLE</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/Rishav-bot895/Tribe" target="_blank" class="project-card">
-                    <div class="project-number">03</div>
-                    <h3 class="project-title">Social Media Platform with Real-Time Messaging</h3>
-                    <p class="project-description">
-                        Built a Django-based social platform with authentication, posts,
-                        comments, and recency feed ordering. Integrated real-time chat
-                        using Django Channels and WebSockets backed by Redis.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">WebSockets</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Redis</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/Rishav-bot895/Image_Caption_Generator" target="_blank" class="project-card">
-                    <div class="project-number">04</div>
-                    <h3 class="project-title">Image Caption Generator WebApp</h3>
-                    <p class="project-description">
-                        Developed an end-to-end image captioning pipeline using TensorFlow
-                        with VGG16 feature extraction trained on 40,000+ captions.
-                        Integrated the trained model into a Django web application.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">VGG16</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/Rishav-bot895/CNN_Driver_Drowsiness_Detector" target="_blank" class="project-card">
-                    <div class="project-number">05</div>
-                    <h3 class="project-title">Driver Drowsiness Detector</h3>
-                    <p class="project-description">
-                        Built a real-time driver monitoring system using CNN and OpenCV.
-                        Achieved 95.87% accuracy on 4200+ labeled images using a
-                        10M-parameter neural network.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">CNN</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/Rishav-bot895/Handwritten-Digit-Recognition" target="_blank" class="project-card">
-                    <div class="project-number">06</div>
-                    <h3 class="project-title">Handwritten Digit Recognition</h3>
-                    <p class="project-description">
-                        Achieved 97.4% validation accuracy on MNIST using a custom
-                        ANN (784-16-16-10) built with TensorFlow/Keras.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Keras</span>
-                        <span class="tech-tag">Scikit-Learn</span>
-                    </div>
-                </a>
-
-                <a href="https://rishav-bot895.github.io/react_weather_app/" target="_blank" class="project-card">
-                    <div class="project-number">07</div>
-                    <h3 class="project-title">React Weather App</h3>
-                    <p class="project-description">
-                        Built a responsive weather application using React and
-                        OpenWeatherMap API with location-based search,
-                        temperature conversion, and error handling.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">ReactJS</span>
-                        <span class="tech-tag">OpenWeatherAPI</span>
-                        <span class="tech-tag">GeoDBAPI</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills" class="section section-alt">
-        <div class="section-container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Technologies</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">ReactJS</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
+                    <div class="terminal-body">
+                        <p>&gt; Loading player profile...</p>
+                        <p>&gt; Executing bio sequence...</p>
+                        <p>&gt; Name: Rishav Raj</p>
+                        <p>&gt; Class: Software Developer / AI &amp; Full-Stack Enthusiast</p>
+                        <p>&gt; Base: Bhubaneswar, India</p>
+                        <p>&gt; Current quest: B.Tech in Computer Science &amp; Communication Engineering at KIIT, CGPA 9.30/10.</p>
+                        <p>&gt; Build style: reliable APIs, data-aware AI systems, clear product flows, and practical engineering tradeoffs.</p>
+                        <p class="prompt">&gt; _</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="section-container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">✓</div>
-                    <h3 class="cert-title">Meta Front-End Developer Specialization</h3>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">✓</div>
-                    <h3 class="cert-title">IBM Machine Learning Specialization</h3>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">✓</div>
-                    <h3 class="cert-title">AWS Academy Cloud Foundation</h3>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon">✓</div>
-                    <h3 class="cert-title">AI/ML with Projects Using Python (KIIT)</h3>
+        <section id="education" class="section">
+            <div class="section-container animate-on-scroll">
+                <h2 class="section-title">STAGE 1: KNOWLEDGE BASE</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-year">2023 - PRESENT</div>
+                        <h3>B.TECH COMPUTER SCIENCE &amp; COMMUNICATION ENGINEERING</h3>
+                        <p class="timeline-subtitle">Kalinga Institute of Industrial Technology</p>
+                        <p>SGPA (Sem VI): 9.96/10.00 | CGPA (Sem I-VI): 9.30/10.00. Coursework includes data structures and algorithms, operating systems, DBMS, OOP, and computer networks.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-year">2021 - 2023</div>
+                        <h3>HIGHER SECONDARY EDUCATION</h3>
+                        <p class="timeline-subtitle">KV IIT Powai Mumbai</p>
+                        <p>PCM with Computer Science. Percentage: 86.8%.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <h3>SECONDARY EDUCATION</h3>
+                        <p class="timeline-subtitle">KV IIT Powai Mumbai</p>
+                        <p>Percentage: 92.8%.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-        <div class="section-container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-grid">
-                    <a href="/cdn-cgi/l/email-protection#41332832292037717971787371717401262c20282d6f222e2c" class="contact-link-card">
-                        <div class="contact-icon">✉</div>
-                        <div class="contact-label">Email</div>
+        <section id="experience" class="section">
+            <div class="section-container animate-on-scroll">
+                <h2 class="section-title">STAGE 2: CAREER MODE</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-year">MARCH 2026 - JUNE 2026</div>
+                        <h3>SWE (AI/ML) INTERN</h3>
+                        <p class="timeline-subtitle">Starvox Labs Private Ltd.</p>
+                        <ul>
+                            <li>Enabled autonomous AI voice agents to handle 15,000+ calls/month and interactive video meetings by contributing to scaling, screen sharing, presentations, and web navigation capabilities.</li>
+                            <li>Designed and developed a node-based workflow automation builder supporting 25+ configurable nodes for AI-powered content generation and ad campaign orchestration.</li>
+                            <li>Integrated AI agents with third-party tools for content generation and ad campaign execution through Model Context Protocol infrastructure.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-year">MAY 2025 - JUNE 2025</div>
+                        <h3>WEB DEVELOPER INTERN</h3>
+                        <p class="timeline-subtitle">Secuodsoft Technologies Private Ltd.</p>
+                        <ul>
+                            <li>Developed a Django web application that extracts text from uploaded images using Tesseract OCR and Pillow preprocessing.</li>
+                            <li>Built experience with Flask, Django, and RESTful APIs while contributing to scalable web application development.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-container animate-on-scroll">
+                <h2 class="section-title">STAGE 3: CABINETS</h2>
+                <div class="projects-grid">
+                    <a href="https://aitrustanalyszer.vercel.app" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_01</span>
+                        <h3>AI Trust Analyzer</h3>
+                        <p>Multi-agent AI evaluation platform using Gemini and LangGraph, hybrid RAG, evidence retrieval, contradiction detection, and explainable trust scoring.</p>
+                        <div class="tag-row"><span>RAG</span><span>FastAPI</span><span>Next.js</span><span>Supabase</span><span>Docker</span></div>
                     </a>
-                    
-                    <a href="https://www.linkedin.com/in/rishav-raj-490591283/" target="_blank" class="contact-link-card">
-                        <div class="contact-icon">in</div>
-                        <div class="contact-label">LinkedIn</div>
+                    <a href="https://github.com/Rishav-bot895/Attendance_App_Frontend" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_02</span>
+                        <h3>BLE Attendance App</h3>
+                        <p>Bluetooth Low Energy attendance system using RSSI, role-based access, and real-time attendance processing.</p>
+                        <div class="tag-row"><span>React Native</span><span>Flask</span><span>BLE</span></div>
                     </a>
-                    
-                    <a href="https://github.com/Rishav-bot895" target="_blank" class="contact-link-card">
-                        <div class="contact-icon">⌘</div>
-                        <div class="contact-label">GitHub</div>
+                    <a href="https://github.com/Rishav-bot895/Tribe" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_03</span>
+                        <h3>Real-Time Social Platform</h3>
+                        <p>Django social platform with authentication, posts, comments, feed ordering, and real-time chat through Django Channels and Redis.</p>
+                        <div class="tag-row"><span>Django</span><span>WebSockets</span><span>PostgreSQL</span><span>Redis</span></div>
                     </a>
-                    
-                    <div class="contact-link-card location-card">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-label">Bhubaneswar, India</div>
-                    </div>
-                </div>
-                
-                <div class="contact-cta">
-                    <p class="contact-message">
-                        Let's build something amazing together. Whether it's a challenging project,
-                        collaboration opportunity, or just a conversation about tech, I'm always excited
-                        to connect with fellow developers and innovators.
-                    </p>
+                    <a href="https://github.com/Rishav-bot895/Image_Caption_Generator" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_04</span>
+                        <h3>Image Caption Generator</h3>
+                        <p>End-to-end captioning pipeline using TensorFlow, VGG16 feature extraction, 40,000+ captions, and Django delivery.</p>
+                        <div class="tag-row"><span>TensorFlow</span><span>Django</span><span>VGG16</span></div>
+                    </a>
+                    <a href="https://github.com/Rishav-bot895/CNN_Driver_Drowsiness_Detector" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_05</span>
+                        <h3>Driver Drowsiness Detector</h3>
+                        <p>Real-time driver monitoring system with CNN and OpenCV, reaching 95.87% accuracy on 4,200+ labeled images.</p>
+                        <div class="tag-row"><span>TensorFlow</span><span>OpenCV</span><span>CNN</span></div>
+                    </a>
+                    <a href="https://rishav-bot895.github.io/react_weather_app/" target="_blank" rel="noreferrer" class="project-card">
+                        <span class="project-kicker">CABINET_06</span>
+                        <h3>React Weather App</h3>
+                        <p>Responsive weather app with location search, temperature conversion, API integration, and user-facing error handling.</p>
+                        <div class="tag-row"><span>React</span><span>OpenWeather</span><span>GeoDB</span></div>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Resume Modal -->
-    <div id="resumeModal" class="modal">
+        <section id="skills" class="section">
+            <div class="section-container animate-on-scroll">
+                <h2 class="section-title">INVENTORY</h2>
+                <div class="inventory-stack">
+                    <div>
+                        <h3 class="inventory-title">TECH STACK</h3>
+                        <div class="skills-grid">
+                            <article class="skill-category">
+                                <h4>LANGUAGES</h4>
+                                <div class="tag-row"><span>C++</span><span>Python</span><span>Java</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            </article>
+                            <article class="skill-category">
+                                <h4>FRAMEWORKS &amp; TOOLS</h4>
+                                <div class="tag-row"><span>TensorFlow</span><span>OpenCV</span><span>React</span><span>React Native</span><span>Django</span><span>Flask</span><span>FastAPI</span><span>Next.js</span><span>Docker</span><span>Git</span></div>
+                            </article>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="inventory-title">BADGES: CERTIFICATES</h3>
+                        <div class="certifications-grid">
+                            <article class="cert-card"><span>OK</span><h4>Meta Front-End Developer Specialization</h4></article>
+                            <article class="cert-card"><span>OK</span><h4>IBM Machine Learning Specialization</h4></article>
+                            <article class="cert-card"><span>OK</span><h4>AWS Academy Cloud Foundation</h4></article>
+                            <article class="cert-card"><span>OK</span><h4>AI/ML with Projects Using Python (KIIT)</h4></article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-container animate-on-scroll">
+                <h2 class="section-title">CONTACT</h2>
+                <div class="contact-panel">
+                    <p>Available for challenging AI, backend, and full-stack work. Start a new run through email, GitHub, or LinkedIn.</p>
+                    <div class="contact-grid">
+                        <a href="mailto:rishav08092005@gmail.com" class="contact-link-card">
+                            <span>MAIL</span>
+                            <strong>Email</strong>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rishav-raj-490591283/" target="_blank" rel="noreferrer" class="contact-link-card">
+                            <span>IN</span>
+                            <strong>LinkedIn</strong>
+                        </a>
+                        <a href="https://github.com/Rishav-bot895" target="_blank" rel="noreferrer" class="contact-link-card">
+                            <span>GIT</span>
+                            <strong>GitHub</strong>
+                        </a>
+                        <div class="contact-link-card location-card">
+                            <span>LOC</span>
+                            <strong>Bhubaneswar, India</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="command-terminal is-collapsed" id="commandTerminal" aria-label="Command navigation terminal">
+        <button class="terminal-toggle" id="terminalToggle" type="button" aria-expanded="false" aria-controls="commandPanel" aria-label="Toggle command terminal">
+            <span aria-hidden="true">&gt;_</span>
+        </button>
+        <div class="command-panel" id="commandPanel">
+            <div class="command-output" id="commandOutput" aria-live="polite">
+                <p>&gt; Type help for commands.</p>
+            </div>
+            <form id="commandForm" class="command-form">
+                <label for="commandInput">&gt;</label>
+                <input id="commandInput" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="help">
+            </form>
+        </div>
+    </aside>
+
+    <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Resume</h2>
-                <button class="modal-close" id="closeResumeModal">&times;</button>
+                <h2 id="resumeModalTitle">RESUME</h2>
+                <button class="modal-close" id="closeResumeModal" type="button" aria-label="Close resume">&times;</button>
             </div>
             <div class="modal-body">
-                <iframe id="resumeIframe" src="assets/Rishav's Resume.pdf" type="application/pdf"></iframe>
+                <iframe id="resumeIframe" src="assets/Rishav's Resume.pdf" title="Rishav Raj resume"></iframe>
             </div>
             <div class="modal-footer">
-                <a href="assets/Rishav's Resume.pdf" download class="modal-download-btn">Download Resume</a>
+                <a href="assets/Rishav's Resume.pdf" download class="modal-download-btn">DOWNLOAD RESUME</a>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Rishav Raj. Crafted with passion and code.</p>
+            <p>&copy; 2026 RISHAV_RAJ TERMINAL_OS. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
-   <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
