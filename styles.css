@@ -434,7 +434,7 @@ nav {
   background: transparent;
   color: var(--primary);
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 
 .command-form input::placeholder {

@@ -203,6 +203,11 @@ const resumeModal = document.getElementById('resumeModal');
 const closeResumeModal = document.getElementById('closeResumeModal');
 
 function openResume() {
+    if (document.activeElement === commandInput) {
+        commandInput.blur();
+        updateKeyboardOffset();
+    }
+
     resumeModal.classList.add('active');
     document.body.style.overflow = 'hidden';
     closeResumeModal.focus();
